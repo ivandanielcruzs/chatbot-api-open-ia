@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { v4 as uuid } from 'uuid';
 import { Message } from './message.entity';
 
 export class Chat {
   readonly id: string;
   messages: Message[];
-  readonly startTime: Date;
+  private startTime: Date;
 
   constructor() {
     this.id = uuid();
@@ -22,5 +20,10 @@ export class Chat {
     const now = new Date();
     const diff = (now.getTime() - this.startTime.getTime()) / (1000 * 60);
     return diff < maxMinutes;
+  }
+
+  // test only
+  setStartTime(time: Date) {
+    this.startTime = time;
   }
 }
