@@ -2,7 +2,7 @@
 
 This project is a **demonstrative API** that integrates OpenAI's GPT models with a custom chatbot manager built using **NestJS**. It was designed as a hands-on way to practice:
 
-- **Prompt engineering** techniques learned in the course [ChatGPT Prompt Engineering for Developers by OpenAI & DeepLearning.AI](hhttps://learn.deeplearning.ai/accomplishments/549bb202-0307-4984-b2e9-26cbd645d3a3?usp=sharing)
+- **Prompt engineering** techniques learned in the course [ChatGPT Prompt Engineering for Developers by OpenAI & DeepLearning.AI](https://learn.deeplearning.ai/accomplishments/549bb202-0307-4984-b2e9-26cbd645d3a3?usp=sharing)
 - Clean architecture principles: **DDD (Domain-Driven Design)** and **SOLID**
 - Real-world NestJS skills including interfaces, dependency injection, and modular design
 

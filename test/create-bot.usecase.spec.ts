@@ -22,7 +22,7 @@ describe('CreateBotUseCase', () => {
     const name = 'HistoryBot';
     const prompt = 'You are an expert in Mexican History.';
 
-    const newBot = new Bot(name, prompt); // ID and structure generated internally
+    const newBot = new Bot(name, prompt);
     mockBotRepository.create.mockReturnValue(newBot);
 
     const result = createBotUseCase.execute(name, prompt);
