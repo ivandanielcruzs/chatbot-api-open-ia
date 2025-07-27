@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "6054109b-5544-493e-b4aa-8f23e05f0115",
+		"name": "Chatbot API - TEST with the History of Mexico",
+		"description": "Postman collection to test the chatbot API, allows to make a new chatbot by a base prompt or instrucctions, so with this will allow to manage a lot of chatbots by a simple call for the endpoint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24046708"
+	},
+	"item": [
+		{
+			"name": "Create Bot",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Historiador Mexicano\",\n  \"basePrompt\": \"You are an expert assistant in Mexican History. Your mission is to answer questions about historical figures and events in a clear, concise, and educational way. Limit your answers to a maximum of 150 words. Avoid personal opinions. If the question is not related to Mexican history, respond: \\\"I'm sorry, I can only answer questions about the History of Mexico.\\\"\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/bots",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/bots/:botId/chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bots",
+						":botId",
+						"chat"
+					],
+					"variable": [
+						{
+							"key": "botId",
+							"value": "d36d2152-efcd-4ebc-9c2e-8c1443b2b100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ask: Who was Hernán Cortés?",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"message\": \"Who was Hernan Cortes?\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/bots/:botId/chat/:chatId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bots",
+						":botId",
+						"chat",
+						":chatId"
+					],
+					"variable": [
+						{
+							"key": "botId",
+							"value": "d36d2152-efcd-4ebc-9c2e-8c1443b2b100"
+						},
+						{
+							"key": "chatId",
+							"value": "e4b4978b-1cb7-467f-9fcf-17601863a8ae"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ask: Who was Conín?",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"message\": \"Who was the indio Con\\u00edn?\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/bots/:botId/chat/:chatId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bots",
+						":botId",
+						"chat",
+						":chatId"
+					],
+					"variable": [
+						{
+							"key": "botId",
+							"value": "d36d2152-efcd-4ebc-9c2e-8c1443b2b100"
+						},
+						{
+							"key": "chatId",
+							"value": "e4b4978b-1cb7-467f-9fcf-17601863a8ae"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ask: Who was Iturbide?",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"message\": \"Who was Agust\\u00edn de Iturbide?\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/bots/:botId/chat/:chatId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bots",
+						":botId",
+						"chat",
+						":chatId"
+					],
+					"variable": [
+						{
+							"key": "botId",
+							"value": "d36d2152-efcd-4ebc-9c2e-8c1443b2b100"
+						},
+						{
+							"key": "chatId",
+							"value": "e4b4978b-1cb7-467f-9fcf-17601863a8ae"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bot",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/bots/:botId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bots",
+						":botId"
+					],
+					"variable": [
+						{
+							"key": "botId",
+							"value": "d36d2152-efcd-4ebc-9c2e-8c1443b2b100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
